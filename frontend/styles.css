@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-pink: #fe2c55;
+  --primary-cyan: #25f4ee;
+  --bg-dark: #0a0b0e;
+  --card-bg: rgba(22, 24, 35, 0.75);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Ambient Glow */
+.ambient-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glow-1 {
+  position: absolute;
+  top: -15%;
+  left: 15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(254, 44, 85, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(80px);
+  animation: pulse-slow 8s infinite alternate ease-in-out;
+}
+
+.glow-2 {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(37, 244, 238, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(90px);
+  animation: pulse-slow 10s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes pulse-slow {
+  0% { transform: scale(1) translate(0, 0); opacity: 0.7; }
+  100% { transform: scale(1.15) translate(20px, 20px); opacity: 1; }
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Buttons and Highlights */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #fe2c55 0%, #ff4b72 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgba(254, 44, 85, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-primary-gradient:hover {
+  box-shadow: 0 6px 28px rgba(254, 44, 85, 0.65);
+  transform: translateY(-1px);
+}
+
+.btn-best-quality {
+  background: linear-gradient(135deg, #fe2c55 0%, #9013fe 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(254, 44, 85, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-best-quality:hover {
+  box-shadow: 0 8px 32px rgba(254, 44, 85, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-best-quality::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: rotate(30deg);
+  animation: shine 4s infinite linear;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  50%, 100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse-ring {
+  animation: ringPulse 2s infinite;
+}
+
+@keyframes ringPulse {
+  0% { box-shadow: 0 0 0 0 rgba(254, 44, 85, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(254, 44, 85, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(254, 44, 85, 0); }
+}

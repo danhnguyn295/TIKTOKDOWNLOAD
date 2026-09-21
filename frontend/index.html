@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok HD Downloader | Tải Video Chất Lượng Gốc Không Logo</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body class="bg-[#0a0b0e] text-white selection:bg-[#fe2c55] selection:text-white">
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow">
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+  </div>
+
+  <div class="relative z-10 min-h-screen flex flex-col justify-between max-w-5xl mx-auto px-4 py-8">
+    
+    <!-- Top Header -->
+    <header class="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#fe2c55] to-[#25f4ee] flex items-center justify-center p-0.5 shadow-lg shadow-[#fe2c55]/20">
+          <div class="w-full h-full bg-[#0d0e12] rounded-[10px] flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.068-.102a2.895 2.895 0 0 1 3.195-4.382v-3.55a6.438 6.438 0 0 0-4.088 1.488A6.442 6.442 0 0 0 4.07 19.34a6.44 6.44 0 0 0 9.074-2.739c.2-.38.337-.788.406-1.206V8.924a8.21 8.21 0 0 0 5.039 1.762V7.185a4.79 4.79 0 0 1-.999-.499z"/>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">
+            TikTok <span class="text-[#fe2c55]">HD</span> Downloader
+          </h1>
+          <p class="text-xs text-slate-400">Chất lượng gốc cao nhất • Bản quyền của <span class="text-white font-medium">Nguyễn Công Danh</span> (<span class="text-[#25f4ee]">nguyencondanh29052007</span>)</p>
+        </div>
+      </div>
+
+      <div class="hidden sm:flex items-center space-x-2 text-xs bg-emerald-500/10 text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-500/20">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Hệ thống sẵn sàng (Local Server)</span>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 space-y-8">
+      
+      <!-- Hero Intro & Input Box -->
+      <section class="glass-panel p-6 sm:p-10 text-center space-y-6">
+        <div class="space-y-3 max-w-2xl mx-auto">
+          <span class="inline-block text-xs uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-[#fe2c55]/10 text-[#fe2c55] border border-[#fe2c55]/20">
+            Bóc tách luồng trực tiếp • Không nén
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+            Tải Video TikTok Đúng <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#fe2c55] to-[#ff6b8b]">Chất Lượng Gốc</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Nhập liên kết TikTok của video hoặc bộ ảnh. Hệ thống sẽ trích xuất file nguyên bản với độ phân giải cao nhất do tác giả đăng lên mà không có watermark.
+          </p>
+        </div>
+
+        <!-- URL Input Form -->
+        <form id="downloadForm" class="max-w-2xl mx-auto space-y-3" onsubmit="event.preventDefault(); handleParseUrl();">
+          <div class="relative flex flex-col sm:flex-row items-stretch sm:items-center bg-[#13151b] border border-white/10 rounded-2xl p-2 focus-within:border-[#fe2c55] transition-all shadow-inner">
+            <div class="flex items-center flex-1 px-3 py-2 sm:py-0">
+              <svg class="w-5 h-5 text-slate-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+              </svg>
+              <input 
+                id="urlInput"
+                type="text" 
+                placeholder="Dán link TikTok vào đây (vt.tiktok.com hoặc tiktok.com/@...)"
+                class="w-full bg-transparent text-white placeholder-slate-500 focus:outline-none text-sm sm:text-base"
+                autocomplete="off"
+              />
+              <button 
+                type="button" 
+                id="clearBtn" 
+                onclick="clearInput()" 
+                class="hidden text-slate-400 hover:text-white p-1 ml-1"
+                title="Xóa"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex items-center space-x-2 mt-2 sm:mt-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/5">
+              <button 
+                type="button" 
+                id="pasteBtn"
+                onclick="pasteClipboard()" 
+                class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs sm:text-sm font-medium text-slate-200 transition-colors flex items-center justify-center space-x-1.5 cursor-pointer"
+                title="Dán từ khay nhớ tạm"
+              >
+                <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                </svg>
+                <span>Dán link</span>
+              </button>
+
+              <button 
+                type="button" 
+                id="submitBtn" 
+                onclick="handleParseUrl()"
+                class="flex-1 sm:flex-initial px-6 py-2.5 rounded-xl btn-primary-gradient font-semibold text-xs sm:text-sm flex items-center justify-center space-x-2 transition-transform active:scale-95 cursor-pointer"
+              >
+                <span id="submitBtnText">Tải Ngay</span>
+                <svg id="submitBtnIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Quick Tips & Examples -->
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-400 pt-2">
+          <span>Hỗ trợ:</span>
+          <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Video 1080p HD</span>
+          <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Âm thanh gốc MP3</span>
+          <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Slide ảnh TikTok</span>
+          <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Link vt.tiktok.com</span>
+        </div>
+      </section>
+
+      <!-- Loading State -->
+      <section id="loadingSection" class="hidden glass-panel p-8 text-center space-y-4 animate-fade-in">
+        <div class="relative w-16 h-16 mx-auto">
+          <div class="w-16 h-16 rounded-full border-4 border-[#fe2c55]/20 border-t-[#fe2c55] animate-spin"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-lg">⚡</span>
+          </div>
+        </div>
+        <div class="space-y-1">
+          <h3 id="loadingStatusText" class="text-base font-semibold text-white">Đang phân tích liên kết...</h3>
+          <p class="text-xs text-slate-400">Đang tìm luồng phân giải cao nhất không watermark từ máy chủ TikTok</p>
+        </div>
+      </section>
+
+      <!-- Error Box -->
+      <div id="errorAlert" class="hidden glass-panel border-red-500/30 bg-red-950/20 p-4 rounded-xl flex items-start space-x-3 text-red-200 text-sm animate-fade-in">
+        <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <div class="flex-1">
+          <p class="font-semibold" id="errorMessage">Đã xảy ra lỗi khi bóc tách video.</p>
+          <p class="text-xs text-red-300/70 mt-1">Gợi ý: Hãy kiểm tra video có đang ở chế độ công khai không, hoặc thử sao chép lại liên kết trực tiếp từ TikTok.</p>
+        </div>
+        <button onclick="hideError()" class="text-red-400 hover:text-white">✕</button>
+      </div>
+
+      <!-- Result Card -->
+      <section id="resultSection" class="hidden glass-panel p-6 sm:p-8 space-y-6 animate-fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          
+          <!-- Media Preview (Left Column) -->
+          <div class="md:col-span-5 space-y-4">
+            <!-- Video Player Box -->
+            <div id="videoContainer" class="relative rounded-2xl overflow-hidden bg-black/80 aspect-[9/16] max-h-[520px] mx-auto border border-white/10 shadow-2xl flex items-center justify-center">
+              <video 
+                id="videoPlayer" 
+                controls 
+                preload="metadata" 
+                playsinline 
+                class="w-full h-full object-contain"
+              ></video>
+              <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-semibold flex items-center space-x-1.5 border border-white/10">
+                <span class="w-2 h-2 rounded-full bg-[#fe2c55]"></span>
+                <span id="playerBadge">Chất lượng gốc HD</span>
+              </div>
+            </div>
+
+            <!-- Slide Images Preview (For photo mode) -->
+            <div id="slideImagesContainer" class="hidden space-y-3">
+              <div class="flex items-center justify-between text-xs text-slate-300">
+                <span class="font-semibold">Bộ ảnh đính kèm (<span id="photoCount">0</span> ảnh):</span>
+              </div>
+              <div id="slideImagesGrid" class="grid grid-cols-3 gap-2 max-h-72 overflow-y-auto p-1 bg-black/40 rounded-xl border border-white/10">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Details & Download Actions (Right Column) -->
+          <div class="md:col-span-7 space-y-6">
+            
+            <!-- Author Profile -->
+            <div class="flex items-center space-x-3.5 pb-4 border-b border-white/10">
+              <img id="authorAvatar" src="" alt="Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-[#fe2c55] shadow-md shadow-[#fe2c55]/20">
+              <div class="flex-1 min-w-0">
+                <h4 id="authorName" class="font-bold text-white text-base truncate">TikTok User</h4>
+                <p id="authorUsername" class="text-xs text-slate-400 truncate">@tiktok_user</p>
+              </div>
+              <span class="text-[11px] px-2.5 py-1 bg-white/5 rounded-full border border-white/10 text-slate-300">
+                Tác giả gốc
+              </span>
+            </div>
+
+            <!-- Caption / Title -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <span>Nội dung bài đăng:</span>
+                <button onclick="copyCaption()" class="text-[#fe2c55] hover:underline flex items-center space-x-1">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  <span id="copyCaptionText">Sao chép caption</span>
+                </button>
+              </div>
+              <p id="videoTitle" class="text-sm text-slate-200 leading-relaxed bg-white/5 p-3 rounded-xl border border-white/5 max-h-28 overflow-y-auto">
+                Không có tiêu đề
+              </p>
+            </div>
+
+            <!-- Video Stats Grid -->
+            <div class="grid grid-cols-4 gap-2 text-center">
+              <div class="bg-white/5 p-2 rounded-xl border border-white/5">
+                <div class="text-xs text-slate-400">❤️ Thích</div>
+                <div id="statLikes" class="text-sm font-bold text-white mt-0.5">0</div>
+              </div>
+              <div class="bg-white/5 p-2 rounded-xl border border-white/5">
+                <div class="text-xs text-slate-400">💬 Bình luận</div>
+                <div id="statComments" class="text-sm font-bold text-white mt-0.5">0</div>
+              </div>
+              <div class="bg-white/5 p-2 rounded-xl border border-white/5">
+                <div class="text-xs text-slate-400">🔁 Chia sẻ</div>
+                <div id="statShares" class="text-sm font-bold text-white mt-0.5">0</div>
+              </div>
+              <div class="bg-white/5 p-2 rounded-xl border border-white/5">
+                <div class="text-xs text-slate-400">👁️ Lượt xem</div>
+                <div id="statViews" class="text-sm font-bold text-white mt-0.5">0</div>
+              </div>
+            </div>
+
+            <!-- Download Buttons Section -->
+            <div class="space-y-3 pt-2">
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center justify-between">
+                <span>Tùy chọn tải về:</span>
+                <span class="text-emerald-400 flex items-center space-x-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>Tải trực tiếp tốc độ cao</span>
+                </span>
+              </div>
+
+              <!-- List of Download Actions Container -->
+              <div id="downloadButtonsList" class="space-y-2.5">
+                <!-- Dynamically filled with HD, Standard, MP3, etc. -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- History Section -->
+      <section class="glass-panel p-6 space-y-4">
+        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5 text-[#fe2c55]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h3 class="font-bold text-sm sm:text-base text-white">Lịch sử tải gần đây</h3>
+          </div>
+          <button onclick="clearHistory()" class="text-xs text-slate-400 hover:text-red-400 transition-colors">
+            Xóa lịch sử
+          </button>
+        </div>
+
+        <div id="historyList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <!-- Filled dynamically or shows empty state -->
+          <div class="col-span-full py-6 text-center text-xs text-slate-500">
+            Chưa có video nào trong lịch sử tải.
+          </div>
+        </div>
+      </section>
+
+      <!-- How to use FAQ -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-400 pt-2">
+        <div class="glass-card p-4 space-y-1.5">
+          <div class="font-bold text-white text-sm flex items-center space-x-2">
+            <span>✨</span>
+            <span>Chất lượng gốc là gì?</span>
+          </div>
+          <p>
+            Khác với các công cụ thông thường nén lại video, trang web này lấy thẳng luồng video nguyên bản từ CDN của TikTok với bitrate và độ phân giải cao nhất do người đăng tải lên.
+          </p>
+        </div>
+        <div class="glass-card p-4 space-y-1.5">
+          <div class="font-bold text-white text-sm flex items-center space-x-2">
+            <span>🚫</span>
+            <span>Không Watermark</span>
+          </div>
+          <p>
+            File tải về hoàn toàn sạch sẽ, không có logo TikTok nhấp nháy ở 4 góc và không có đoạn outro giới thiệu tên người dùng ở cuối video.
+          </p>
+        </div>
+        <div class="glass-card p-4 space-y-1.5">
+          <div class="font-bold text-white text-sm flex items-center space-x-2">
+            <span>🔒</span>
+            <span>Bảo mật & Riêng tư</span>
+          </div>
+          <p>
+            Trang web chạy trực tiếp trên máy của bạn (Local Server), không lưu trữ thông tin cá nhân và không bị làm phiền bởi quảng cáo hay mã theo dõi.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-xs text-slate-500 border-t border-white/10 pt-6 space-y-1">
+      <p class="text-slate-400">TikTok HD Downloader • Thiết kế dành riêng cho <span class="text-white font-medium">Nguyễn Công Danh</span> (<span class="text-[#fe2c55]">nguyencondanh29052007</span>)</p>
+      <p class="text-slate-500 text-[11px]">Hỗ trợ tải video Full HD 1080p gốc • Không watermark • Trích xuất MP3 & Bộ ảnh Slide</p>
+    </footer>
+
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
